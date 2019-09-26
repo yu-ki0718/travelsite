@@ -13,13 +13,13 @@ const Blog = props => {
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
 
-    const prevPage = currentPage - 1 === 1?`/blogs/`:`/blogs${currentPage - 1}`
-    const nextPage = `/blogs/${currentPage+1}`
+    const prevPage = currentPage - 1 === 1?`/latest/`:`/latest${currentPage - 1}`
+    const nextPage = `/latest/${currentPage+1}`
 
     const {data} = props
     return (
         <Layout>
-            <SEO title="Blogs" />
+            <SEO title="latest" />
             <section className={styles.blog}>
                 <Title title="latest" subtitle="posts" />
                 <div className={styles.center}>
@@ -41,7 +41,7 @@ const Blog = props => {
                             <AniLink 
                             key={i}
                             fade 
-                            to={`/blogs/${i === 0 ? "" : i + 1}`} 
+                            to={`/latest/${i === 0 ? "" : i + 1}`} 
                             className={i+1===currentPage?`${styles.link}${styles.active}`:`${styles.link}`}
                             >
                                 {i + 1}
